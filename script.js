@@ -17,13 +17,13 @@ function startQuiz(event) {
     answer2.style.display = "block";
     answer3.style.display = "block";
     answer4.style.display = "block";
+    var num = Math.floor(Math.random() * questions.length);
+    answer1.textContent = questions[num].a1;
+    answer2.textContent = questions[num].a2;
+    answer3.textContent = questions[num].a3;
+    answer4.textContent = questions[num].a4;
     var timerInterval = setInterval(function() {
         time++;
-        var num = Math.floor(Math.random() * 5)
-        answer1.textContent = questions[num].a1;
-        answer2.textContent = questions[num].a2;
-        answer3.textContent = questions[num].a3;
-        answer4.textContent = questions[num].a4;
         timer.textContent = time;
     }, 1000);
 }
@@ -35,6 +35,11 @@ function question(answer, num) {
     else {
         alert("wrong");
     }
+    var num = Math.floor(Math.random() * questions.length);
+    answer1.textContent = questions[num].a1;
+    answer2.textContent = questions[num].a2;
+    answer3.textContent = questions[num].a3;
+    answer4.textContent = questions[num].a4;
 }
 
 startBtn.addEventListener("click", startQuiz);
