@@ -37,12 +37,15 @@ function question(event) {
     if (event.target.textContent === questions[questionNum]["c"]){
         yesOrNo.style.display = "block";
         yesOrNo.textContent = "Correct!";
+        setTimeout(function(){yesOrNo.style.display = "none"}, 1000);
     }
     else {
         yesOrNo.style.display = "block";
         yesOrNo.textContent = "Wrong!";
+        setTimeout(function(){yesOrNo.style.display = "none"}, 1000);
         time = time - 3;
     }
+
     questions.splice(questionNum,1);
     console.log(questions)
     var newNum = Math.floor(Math.random() * questions.length);
