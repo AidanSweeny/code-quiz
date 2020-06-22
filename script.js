@@ -8,7 +8,7 @@ var answer4 = document.querySelector(".answer4");
 var answers = document.querySelector(".answers");
 var yesOrNo = document.querySelector(".yesOrNo");
 var timer = document.querySelector(".timer");
-var questions = [{q:"What type bender is Katara?", a1:"air" , a2:"water", a3:"earth", a4:"fire", c: "water"}, {q:"What does Sokka's girlfriend turn into?", a1:"a fish" , a2:"the sun", a3:"the moon", a4:"a bear", c:"the moon"}, {q:"question?", a1:"answer" , a2:"answer", a3:"answer", a4:"answer"}, {q:"question?", a1:"answer" , a2:"answer", a3:"answer", a4:"answer"}, {q:"question?", a1:"answer" , a2:"answer", a3:"answer", a4:"answer"}];
+var questions = [{q:"What type bender is Katara?", a1:"air" , a2:"water", a3:"earth", a4:"fire", c: "water"}, {q:"What does Sokka's girlfriend turn into?", a1:"a fish" , a2:"the sun", a3:"the moon", a4:"a bear", c:"the moon"}, {q:"What type of earth does Toph learn to bend?", a1:"magma" , a2:"diamond", a3:"metal", a4:"mercury", c:"metal"}, {q:"Who was the avatar befor Aang?", a1:"Roku" , a2:"Kyoshi", a3:"Sokka", a4:"Korra", c:"Roku"}, {q:"Who taught Zuko and Aang to firebend?", a1:"Iroh" , a2:"Dragons", a3:"The Fire Lord", a4:"The Sun", c: "Dragons"}];
 var time = 60;
 var questionNum = Math.floor(Math.random() * questions.length);
 
@@ -19,6 +19,8 @@ function startQuiz() {
     answer2.style.display = "block";
     answer3.style.display = "block";
     answer4.style.display = "block";
+    questionTag.style.display = "block";
+    questionTag.textContent = questions[questionNum].q;
     answer1.textContent = questions[questionNum].a1;
     answer2.textContent = questions[questionNum].a2;
     answer3.textContent = questions[questionNum].a3;
@@ -44,7 +46,8 @@ function question(event) {
     questions.splice(questionNum,1);
     console.log(questions)
     var newNum = Math.floor(Math.random() * questions.length);
-    //yesOrNo.style.display = "none";
+
+    questionTag.textContent = questions[newNum].q;
     answer1.textContent = questions[newNum].a1;
     answer2.textContent = questions[newNum].a2;
     answer3.textContent = questions[newNum].a3;
