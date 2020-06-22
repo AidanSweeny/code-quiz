@@ -6,43 +6,45 @@ var answer2 = document.querySelector(".answer2");
 var answer3 = document.querySelector(".answer3");
 var answer4 = document.querySelector(".answer4");
 var answers = document.querySelector(".answers");
+var yesOrNo = document.querySelector(".yesOrNo");
 var timer = document.querySelector(".timer");
 var questions = [{q:"What type bender is Katara?", a1:"air" , a2:"water", a3:"earth", a4:"fire", c: "water"}, {q:"What does Sokka's girlfriend turn into?", a1:"a fish" , a2:"the sun", a3:"the moon", a4:"a bear", c:"the moon"}, {q:"question?", a1:"answer" , a2:"answer", a3:"answer", a4:"answer"}, {q:"question?", a1:"answer" , a2:"answer", a3:"answer", a4:"answer"}, {q:"question?", a1:"answer" , a2:"answer", a3:"answer", a4:"answer"}];
 var time = 0;
-var num = Math.floor(Math.random() * questions.length);
+var questionNum = Math.floor(Math.random() * questions.length);
 
-function startQuiz(event) {
+function startQuiz() {
     startBtn.style.display = "none";
     startTag.style.display = "none";
     answer1.style.display = "block";
     answer2.style.display = "block";
     answer3.style.display = "block";
     answer4.style.display = "block";
-    answer1.textContent = questions[num].a1;
-    answer2.textContent = questions[num].a2;
-    answer3.textContent = questions[num].a3;
-    answer4.textContent = questions[num].a4;
+    answer1.textContent = questions[questionNum].a1;
+    answer2.textContent = questions[questionNum].a2;
+    answer3.textContent = questions[questionNum].a3;
+    answer4.textContent = questions[questionNum].a4;
     var timerInterval = setInterval(function() {
         time++;
         timer.textContent = time;
     }, 1000);
 }
 
-function question() {
-    console.log(event.target);
-    console.log(num);
-    if (event.target === questions[num]){
+function question(event) {
+    console.log(questions[questionNum]["c"])
+    console.log(event.target.textContent)
+    if (event.target.textContent === questions[questionNum]["c"]){
         alert("correct");
     }
     else {
         alert("wrong");
     }
     var num = Math.floor(Math.random() * questions.length);
-    answer1.textContent = questions[num].a1;
-    answer2.textContent = questions[num].a2;
-    answer3.textContent = questions[num].a3;
-    answer4.textContent = questions[num].a4;
+    answer1.textContent = questions[questionNum].a1;
+    answer2.textContent = questions[questionNum].a2;
+    answer3.textContent = questions[questionNum].a3;
+    answer4.textContent = questions[questionNum].a4;
 }
 
 startBtn.addEventListener("click", startQuiz);
 answers.addEventListener("click", question);
+
