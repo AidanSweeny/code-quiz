@@ -9,7 +9,7 @@ var answers = document.querySelector(".answers");
 var yesOrNo = document.querySelector(".yesOrNo");
 var timer = document.querySelector(".timer");
 var questions = [{q:"What type bender is Katara?", a1:"air" , a2:"water", a3:"earth", a4:"fire", c: "water"}, {q:"What does Sokka's girlfriend turn into?", a1:"a fish" , a2:"the sun", a3:"the moon", a4:"a bear", c:"the moon"}, {q:"question?", a1:"answer" , a2:"answer", a3:"answer", a4:"answer"}, {q:"question?", a1:"answer" , a2:"answer", a3:"answer", a4:"answer"}, {q:"question?", a1:"answer" , a2:"answer", a3:"answer", a4:"answer"}];
-var time = 0;
+var time = 60;
 var questionNum = Math.floor(Math.random() * questions.length);
 
 function startQuiz() {
@@ -24,7 +24,7 @@ function startQuiz() {
     answer3.textContent = questions[questionNum].a3;
     answer4.textContent = questions[questionNum].a4;
     var timerInterval = setInterval(function() {
-        time++;
+        time--;
         timer.textContent = time;
     }, 1000);
 }
@@ -33,16 +33,20 @@ function question(event) {
     console.log(questions[questionNum]["c"])
     console.log(event.target.textContent)
     if (event.target.textContent === questions[questionNum]["c"]){
-        alert("correct");
+        yesOrNo.style.display = "block";
+        yesOrNo.textContent = "Correct!";
     }
     else {
-        alert("wrong");
+        yesOrNo.style.display = "block";
+        yesOrNo.textContent = "Wrong!";
+        time = time - 3;
     }
-    var num = Math.floor(Math.random() * questions.length);
-    answer1.textContent = questions[questionNum].a1;
-    answer2.textContent = questions[questionNum].a2;
-    answer3.textContent = questions[questionNum].a3;
-    answer4.textContent = questions[questionNum].a4;
+    var newNum = Math.floor(Math.random() * questions.length);
+    //yesOrNo.style.display = "none";
+    answer1.textContent = questions[newNum].a1;
+    answer2.textContent = questions[newNum].a2;
+    answer3.textContent = questions[newNum].a3;
+    answer4.textContent = questions[newNum].a4;
 }
 
 startBtn.addEventListener("click", startQuiz);
