@@ -41,6 +41,8 @@ function question(event) {
         yesOrNo.textContent = "Wrong!";
         time = time - 3;
     }
+    questions.splice(questionNum,1);
+    console.log(questions)
     var newNum = Math.floor(Math.random() * questions.length);
     //yesOrNo.style.display = "none";
     answer1.textContent = questions[newNum].a1;
