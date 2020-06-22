@@ -55,6 +55,7 @@ function question(event) {
     answer2.textContent = questions[newNum].a2;
     answer3.textContent = questions[newNum].a3;
     answer4.textContent = questions[newNum].a4;
+    questionNum = newNum;
 }
 
 startBtn.addEventListener("click", startQuiz);
