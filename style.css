@@ -95,10 +95,11 @@
     text-align: right;
     font-size: 40px;
     float: right;
+    margin-top: 0px;
 }
 
 .highScores {
-    display: block;
+    display: none;
     height: 30px;
 }
 
@@ -114,10 +115,11 @@
 }
 
 .viewHighScores {
-    margin-left:auto;
-    color: white;
-    float: left;
-
+    font-family: 'Nanum Myeongjo', serif;
+    display:block;
+}
+.close {
+    display: none;
 }
 
 ::placeholder {
