@@ -9,7 +9,18 @@ var answers = document.querySelector(".answers");
 var yesOrNo = document.querySelector(".yesOrNo");
 var timer = document.querySelector(".timer");
 var scorer = document.querySelector(".score");
-var questions = [{q:"What type bender is Katara?", a1:"air" , a2:"water", a3:"earth", a4:"fire", c: "water"}, {q:"What does Sokka's girlfriend turn into?", a1:"a fish" , a2:"the sun", a3:"the moon", a4:"a bear", c:"the moon"}, {q:"What type of earth does Toph learn to bend?", a1:"magma" , a2:"diamond", a3:"metal", a4:"mercury", c:"metal"}, {q:"Who was the avatar befor Aang?", a1:"Roku" , a2:"Kyoshi", a3:"Sokka", a4:"Korra", c:"Roku"}, {q:"Who taught Zuko and Aang to firebend?", a1:"Iroh" , a2:"Dragons", a3:"The Fire Lord", a4:"The Sun", c: "Dragons"}];
+var highScore = document.querySelector(".highScores");
+var highScores = {};
+var questions = [{q:"What type bender is Katara?", a1:"air" , a2:"water", a3:"earth", a4:"fire", c: "water"}, 
+{q:"What does Sokka's girlfriend turn into?", a1:"a fish" , a2:"the sun", a3:"the moon", a4:"a bear", c:"the moon"}, 
+{q:"What type of earth does Toph learn to bend?", a1:"magma" , a2:"diamond", a3:"metal", a4:"mercury", c:"metal"}, 
+{q:"Who was the avatar befor Aang?", a1:"Roku" , a2:"Kyoshi", a3:"Sokka", a4:"Korra", c:"Roku"}, 
+{q:"Who taught Zuko and Aang to firebend?", a1:"Iroh" , a2:"Dragons", a3:"The Fire Lord", a4:"The Sun", c: "Dragons"}, 
+{q:"What do you say to make Appa fly?", a1:"hoo-ha" , a2:"yee-ha", a3:"yipee", a4:"yip-yip", c: "yip-yip"},
+{q:"What does Aang use to heal Sokka and Katara when they are sick?", a1:"cough syrup" , a2:"frozen frogs", a3:"candy", a4:"burnt leaves", c: "frozen frogs"},
+{q:"What does Sokka make his sword from?", a1:"metal" , a2:"wood", a3:"stone", a4:"meteorite", c: "meteorite"}, 
+{q:"What is the organization that Iroh is a part of?", a1:"The Jasmine Dragon" , a2:"The Gold Leaf", a3:"The White Lotus", a4:"Fire Benders Anonymous", c: "The White Lotus"}, 
+{q:"Who must Aang let go of to unlock the Avatar state?", a1:"Sokka" , a2:"Toph", a3:"Roku", a4:"Katara", c: "Katara"}];
 var time = 60;
 var questionNum = Math.floor(Math.random() * questions.length);
 var score = 0;
@@ -41,6 +52,7 @@ function startQuiz(event) {
             answer3.style.display = "none";
             answer4.style.display = "none";
             questionTag.style.display = "none";
+            timer.style.display = "none";
             scorer.style.display = "block";
             scorer.textContent = "Your score is: " + score;
         }
@@ -81,4 +93,9 @@ function question(event) {
 
 startBtn.addEventListener("click", startQuiz);
 answers.addEventListener("click", question);
+highScore.addEventListener("click", function(){
+    startTag.style.display = "none";
+    scorer.style.display = "none";
+    
+})
 

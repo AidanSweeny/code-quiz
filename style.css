@@ -1,47 +1,97 @@
+* {
+    background-color: grey;
+}
 .start {
     text-align: center;
     display: block;
+    font-family: 'Nanum Myeongjo', serif;
 }
 
 .startBtn {
+    font-family: 'Nanum Myeongjo', serif;
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
     text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
     display: block;
 }
 
 .question {
+    font-family: 'Nanum Myeongjo', serif;
     text-align: center;
     display: none;
 }
 
 .answer1 {
+    font-family: 'Nanum Myeongjo', serif;
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
     margin-left: 25%;
     display: none;
 }
 
 .answer2 {
+    font-family: 'Nanum Myeongjo', serif;
+    background-color: rgb(76, 91, 175); /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
     margin-left: 25%;
     display: none;
 }
 
 .answer3 {
+    font-family: 'Nanum Myeongjo', serif;
+    background-color: rgb(170, 64, 64); /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
     margin-left: 25%;
     display: none;
 }
 
 .answer4 {
+    font-family: 'Nanum Myeongjo', serif;
+    background-color: rgb(175, 140, 76); /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
     margin-left: 25%;
     display: none;
 }
 
 .yesOrNo {
+    font-family: 'Nanum Myeongjo', serif;
     text-align: center;
     display: none;
+    font-size: 30px;
 }
 
 .scorer {
-    text-align: center;
+    font-family: 'Nanum Myeongjo', serif;
     display: none;
+    font-size: 30px;
 }
 .timer {
+    font-family: 'Nanum Myeongjo', serif;
     text-align: right;
+    font-size: 40px;
 }
