@@ -1,35 +1,47 @@
-.startBtn {
+.start {
+    text-align: center;
     display: block;
 }
 
-.startTag {
+.startBtn {
+    text-align: center;
     display: block;
 }
 
 .question {
+    text-align: center;
     display: none;
 }
 
 .answer1 {
+    margin-left: 25%;
     display: none;
 }
 
 .answer2 {
+    margin-left: 25%;
     display: none;
 }
 
 .answer3 {
+    margin-left: 25%;
     display: none;
 }
 
 .answer4 {
+    margin-left: 25%;
     display: none;
 }
 
 .yesOrNo {
+    text-align: center;
     display: none;
 }
 
 .scorer {
+    text-align: center;
     display: none;
+}
+.timer {
+    text-align: right;
 }

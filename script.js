@@ -22,6 +22,7 @@ function startQuiz(event) {
     answer3.style.display = "block";
     answer4.style.display = "block";
     questionTag.style.display = "block";
+    timer.textContent = time;
     questionTag.textContent = questions[questionNum].q;
     answer1.textContent = questions[questionNum].a1;
     answer2.textContent = questions[questionNum].a2;
