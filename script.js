@@ -7,9 +7,12 @@ var answer3 = document.querySelector(".answer3");
 var answer4 = document.querySelector(".answer4");
 var answers = document.querySelector(".answers");
 var yesOrNo = document.querySelector(".yesOrNo");
+var initialBtn = document.querySelector(".initialBtn");
 var timer = document.querySelector(".timer");
 var scorer = document.querySelector(".score");
 var highScore = document.querySelector(".highScores");
+var namer = document.querySelector("#name");
+var viewHighScores = document.querySelector(".viewHighScores");
 var highScores = {};
 var questions = [{q:"What type bender is Katara?", a1:"air" , a2:"water", a3:"earth", a4:"fire", c: "water"}, 
 {q:"What does Sokka's girlfriend turn into?", a1:"a fish" , a2:"the sun", a3:"the moon", a4:"a bear", c:"the moon"}, 
@@ -26,6 +29,8 @@ var questionNum = Math.floor(Math.random() * questions.length);
 var score = 0;
 
 function startQuiz(event) {
+    score = 0;
+    time = 60;
     startBtn.style.display = "none";
     startTag.style.display = "none";
     answer1.style.display = "block";
@@ -54,7 +59,10 @@ function startQuiz(event) {
             questionTag.style.display = "none";
             timer.style.display = "none";
             scorer.style.display = "block";
+            startBtn.textContent = "Start Again";
+            startBtn.style.display = "block";
             scorer.textContent = "Your score is: " + score;
+            highScore.style.display = "block";
         }
 
     }, 1000);
@@ -95,7 +103,12 @@ startBtn.addEventListener("click", startQuiz);
 answers.addEventListener("click", question);
 highScore.addEventListener("click", function(){
     startTag.style.display = "none";
-    scorer.style.display = "none";
-    
-})
+    startBtn.style.display = "none";
+    initialBtn.style.display = "block";
+    highScore.style.display = "none";
+    namer.style.display = "block";
+});
+initialBtn.addEventListener("click", function(){
+    highScores[namer.value] = score;
+});
 

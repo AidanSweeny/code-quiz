@@ -94,4 +94,32 @@
     font-family: 'Nanum Myeongjo', serif;
     text-align: right;
     font-size: 40px;
+    float: right;
 }
+
+.highScores {
+    display: block;
+    height: 30px;
+}
+
+#name {
+    display: none;
+    width: 150px;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+.initialBtn {
+    display: none;
+}
+
+.viewHighScores {
+    margin-left:auto;
+    color: white;
+    float: left;
+
+}
+
+::placeholder {
+    color: white;
+  }
